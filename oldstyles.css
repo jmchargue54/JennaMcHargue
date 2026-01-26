@@ -139,34 +139,34 @@ main {
     font-size: 0.9rem;
 }
 
-/* About Section */
-.about-section {
+/* resume Section */
+.resume-section {
     padding: 4rem 20px;
     background-color: #fff;
 }
 
-.about-section h2 {
+.resume-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #2c3e50;
     text-align: center;
 }
 
-.about-content {
+.resume-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.about-text {
+.resume-text {
     line-height: 1.8;
 }
 
-.about-text p {
+.resume-text p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-.about-text h3 {
+.resume-text h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: #2c3e50;
@@ -359,7 +359,7 @@ footer {
         font-size: 1.5rem;
     }
 
-    .about-section h2,
+    .resume-section h2,
     .projects-section h2,
     .contact-section h2 {
         font-size: 2rem;

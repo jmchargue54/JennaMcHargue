@@ -155,26 +155,26 @@ nav {
     background-color: var(--light-bg);
 }
 
-/* ===== ABOUT PAGE ===== */
-.about-section {
+/* ===== resume PAGE ===== */
+.resume-section {
     background-color: var(--light-bg);
 }
 
-.about-content {
+.resume-content {
     background: white;
     border-radius: 12px;
     padding: 3rem;
     border: 1px solid var(--border);
 }
 
-.about-education p,
-.about-experience p {
+.resume-education p,
+.resume-experience p {
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--primary);
 }
 
-.about-experience ul {
+.resume-experience ul {
     margin-bottom: 1.5rem;
 }
 
