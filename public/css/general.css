@@ -6,12 +6,13 @@
 }
 
 :root {
-    --primary: #1f2933;
-    --secondary: #6b7280;
+    --primary: #641a1c;
+    --secondary: #555a65;
     --accent: #a78bfa;
     --background: #ffffff;
     --light-bg: #f9fafb;
     --border: #e5e7eb;
+    --link: #17465b;
 }
 
 body {
@@ -52,6 +53,10 @@ ul {
 li {
     margin-bottom: 0.5rem;
     color: var(--secondary);
+}
+
+a {
+    color: var(--link);
 }
 
 /* ===== HEADER / NAV ===== */
@@ -182,6 +187,21 @@ nav {
 /* ===== RESUME PAGE ===== */
 .resume-section {
     background-color: var(--light-bg);
+}
+
+.resume-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.resume-header h2 {
+    margin: 0;
+}
+
+#review-pdf {
+    margin: 0;
 }
 
 .resume-content {
