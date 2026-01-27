@@ -13,19 +13,19 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
 app.get('/', (req, res) => {
-    res.render('index'); // no .ejs extension
+  res.render('index', { page: 'home' });
 });
 
 app.get('/resume', (req, res) => {
-    res.render('resume');
+  res.render('resume', { page: 'resume' });
 });
 
 app.get('/projects', (req, res) => {
-    res.render('projects');
+  res.render('projects', { page: 'projects' });
 });
 
 app.get('/contact', (req, res) => {
-    res.render('contact');
+    res.render('contact', { page: 'contact' });
 });
 
 app.listen(PORT, () => {

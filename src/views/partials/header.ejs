@@ -14,10 +14,15 @@
                 <h1>Jenna McHargue</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/resume">Resume</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <!-- <li><a href="/contact">Contact</a></li> -->
+            <li>
+                <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home</a>
+            </li>
+            <li>
+                <a href="/resume" class="<%= page === 'resume' ? 'active' : '' %>">Resume</a>
+            </li>
+            <li>
+                <a href="/projects" class="<%= page === 'projects' ? 'active' : '' %>">Projects</a>
+            </li>
             </ul>
         </nav>
     </header>

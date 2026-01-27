@@ -90,6 +90,30 @@ nav {
     color: var(--primary);
 }
 
+/* ===== MOBILE NAV ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+        padding-top: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+}
+
+
 /* ===== HERO (HOME) ===== */
 .hero {
     min-height: 85vh;
@@ -155,27 +179,33 @@ nav {
     background-color: var(--light-bg);
 }
 
-/* ===== resume PAGE ===== */
+/* ===== RESUME PAGE ===== */
 .resume-section {
     background-color: var(--light-bg);
 }
 
 .resume-content {
-    background: white;
-    border-radius: 12px;
-    padding: 3rem;
-    border: 1px solid var(--border);
+    background: transparent;
+    padding: 0;
 }
 
-.resume-education p,
-.resume-experience p {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--primary);
+.resume-section h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Individual resume items */
+.resume-experience > div,
+.resume-education > div {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    background: white;
 }
 
 .resume-experience ul {
-    margin-bottom: 1.5rem;
+    margin-top: 0.75rem;
 }
 
 /* ===== SKILLS ===== */
@@ -191,6 +221,42 @@ nav {
     margin-bottom: 0.6rem;
     border: 1px solid var(--border);
 }
+
+/* ===== PROJECTS PAGE ===== */
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+/* Individual project cards */
+.project-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    background: white;
+}
+
+/* Title */
+.project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Description */
+.project-card p {
+    margin-bottom: 1.25rem;
+    color: var(--secondary);
+}
+
+/* Links */
+.project-card a {
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
 
 /* ===== FOOTER ===== */
 footer {
