@@ -28,6 +28,39 @@ app.get('/contact', (req, res) => {
     res.render('contact', { page: 'contact' });
 });
 
+// 404 handler
+app.use((req, res, next) => {
+    const err = new Error('Page Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    // Determine status and template
+    const status = err.status || 500;
+    const template = status === 404 ? '404' : '500';
+
+    // Only log non-404 errors for debugging purposes
+    if (status !== 404) {
+        // Log error details for debugging
+        console.error('Error occurred:', err.message);
+        console.error('Stack trace:', err.stack);
+    }
+
+    // Prepare data for the template
+    const context = {
+        title: status === 404 ? 'Page Not Found' : 'Server Error',
+        error: err.message,
+        // stack: err.stack
+        page: null
+    };
+
+    // Render the appropriate error template
+    res.status(status).render(`errors/${template}`, context);
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
