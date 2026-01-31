@@ -1,14 +1,39 @@
 <%- include('partials/header') %>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Welcome to My Portfolio</h2>
-                <img src="/img/MosesLakeSeniorSession_29_resizedAgain.jpg" alt="JennaMcHargue_Image">
-                <p>Hi, I'm Jenna McHargue</p>
-                <p class="tagline">Web Developer | Designer | Creative Thinker</p>
-                <div class="cta-buttons">
-                    <a href="/projects" class="btn btn-primary">View My Work</a>
-                    <!-- <a href="/contact.ejs" class="btn btn-secondary">Get In Touch</a> -->
-                </div>
+
+<section class="hero-split">
+    <!-- LEFT SIDE -->
+    <div class="hero-left">
+        <div class="profile-card">
+            <img
+                src="/img/MosesLakeSeniorSession_29_resizedAgain.jpg"
+                alt="Jenna McHargue portrait"
+                class="profile-img"
+            />
+
+            <h3>Jenna<br>McHargue</h3>
+            <span class="divider"></span>
+            <p class="role">WEB DESIGN & DEVELOPMENT</p>
+
+            <div class="socials">
             </div>
-        </section>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="hero-right">
+        <h1>Hello</h1>
+        <p class="subtitle">Welcome to my Portfolio</p>
+
+        <div class="cta-buttons">
+            <a href="/resume" class="btn btn-primary">Resume</a>
+            <a href="/projects" class="btn btn-secondary">Projects</a>
+        </div>
+
+        <p class="hero-text">
+            Web design and development student who loves turning ideas into
+            clean, intuitive digital experiences.
+        </p>
+    </div>
+</section>
+
 <%- include('partials/footer') %>

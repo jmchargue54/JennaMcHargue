@@ -8,10 +8,9 @@
 :root {
     --primary: #641a1c;
     --secondary: #555a65;
-    --accent: #a78bfa;
-    --background: #ffffff;
+    --white: #ffffff;
+    --background: #F1ECE3;
     --light-bg: #f9fafb;
-    --border: #e5e7eb;
     --link: #17465b;
 }
 
@@ -65,12 +64,13 @@ header {
 }
 
 nav {
-    max-width: 1100px;
+    max-width: 100%;
     margin: auto;
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--white);
 }
 
 .logo h1 {
@@ -130,6 +130,9 @@ nav {
 
 .hero-content {
     max-width: 700px;
+    p {
+        max-width: 500px;
+    }
 }
 
 .hero h2 {
@@ -151,10 +154,114 @@ nav {
     margin-bottom: 2rem;
 }
 
+/* ===== SPLIT HERO ===== */
+
+.hero-split {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    background-color: #e4d7c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile card */
+.profile-card {
+    background: var(--background);
+    width: 310px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+    position: relative;
+    transform: translateX(90%);
+}
+
+/* Profile image */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.divider {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+    margin: 0.75rem auto;
+}
+
+.role {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+}
+
+/* Social icons (placeholder style) */
+.socials {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    background: white;
+    padding: 5rem 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-right h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    max-width: 420px;
+    margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-right {
+        padding: 3rem 2rem;
+    }
+
+    .hero-right h1 {
+        font-size: 3rem;
+    }
+}
+
+
 /* ===== BUTTONS ===== */
 .cta-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 1rem;
 }
 
@@ -166,27 +273,21 @@ nav {
     transition: all 0.2s ease;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary {
     background-color: var(--primary);
+    border: 1px solid var(--primary);
     color: white;
 }
 
-.btn-primary:hover {
-    opacity: 0.85;
-}
-
-.btn-secondary {
-    border: 1px solid var(--border);
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: var(--white);
+    border: 1px solid var(--primary);
     color: var(--primary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--light-bg);
 }
 
 /* ===== RESUME PAGE ===== */
 .resume-section {
-    background-color: var(--light-bg);
+    background-color: var(--background);
 }
 
 .resume-header {
@@ -222,6 +323,9 @@ nav {
     padding: 1.5rem;
     margin-bottom: 1.25rem;
     background: white;
+    p strong {
+        color: var(--primary);
+    }
 }
 
 .resume-experience ul {
@@ -240,6 +344,9 @@ nav {
     border-radius: 8px;
     margin-bottom: 0.6rem;
     border: 1px solid var(--border);
+    strong {
+        color: var(--primary);
+    }
 }
 
 /* ===== PROJECTS PAGE ===== */
@@ -250,38 +357,41 @@ nav {
     margin-top: 2.5rem;
 }
 
-/* Individual project cards */
+/* Project Card Layout */
 .project-card {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* text | image */
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 2rem;
     background: white;
+    overflow: hidden; /* IMPORTANT: lets image touch edges cleanly */
 }
 
-/* Title */
-.project-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+/* Left content */
+.project-content {
+    padding: 2rem;
 }
 
-/* Description */
-.project-card p {
-    margin-bottom: 1.25rem;
-    color: var(--secondary);
+/* Right image container */
+.project-image {
+    width: 100%;
+    height: 100%;
 }
 
-/* Links */
-.project-card a {
-    display: inline-block;
-    margin-right: 0.75rem;
-    margin-bottom: 0.5rem;
+/* Image itself */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills space evenly */
+    display: block;
 }
-
 
 /* ===== FOOTER ===== */
 footer {
-    text-align: center;
-    padding: 2rem;
+    text-align: left;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
     color: var(--secondary);
+    background-color: var(--white);
     font-size: 0.9rem;
 }
