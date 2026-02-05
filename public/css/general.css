@@ -374,6 +374,9 @@ nav {
 /* Left content */
 .project-content {
     padding: 2rem;
+    a {
+        text-decoration: underline;
+    }
 }
 
 /* Right image container */
